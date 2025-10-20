@@ -60,6 +60,9 @@
 | **박건영** | 레시피 작성 및 상세 페이지 | 작성 페이지 및 상세 페이지 UI, CRUD 기능, 이미지 업로드, 수정 모드, 라우팅, UI           |
 | **한해찬** | 메인(홈) 페이지            | 메인 UI, 날씨 API 연동, 지역 정보 표시, 날씨별 추천 기능, 네비게이션 바, 다크모드        |
 
+📎 팀 프로젝트 페이지  
+👉 [React Project - 5조 (Notion)](https://www.notion.so/React-Project-5-28caa939b4b3808eb6d8c6c5236f855b)
+
 ---
 
 ## 🌐 사용 API
@@ -257,6 +260,3 @@
   ![전체레시피](./images/responsive.gif)
 
 ---
-
-📎 팀 프로젝트 페이지  
-👉 [React Project - 5조 (Notion)](https://www.notion.so/React-Project-5-28caa939b4b3808eb6d8c6c5236f855b)
