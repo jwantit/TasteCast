@@ -1,0 +1,190 @@
+/* 필터 전체 섹션 */
+.filter-section {
+  width: 80%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: #f8f4f0cc; /* 살짝 투명한 크림색 */
+  box-shadow: 0 4px 12px rgba(63, 27, 1, 0.15); /* 부드러운 브라운 그림자 */
+  font-family: "Pretendard Variable", "Inter", sans-serif;
+}
+
+/* 필터 그룹 한 줄 (제목 + 옵션들) */
+.filter-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+}
+
+/* 제목 텍스트 */
+.filter-row h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #421f01; /* 진한 오렌지/브라운 */
+  width: 120px;
+  margin-top: 8px;
+}
+
+/* 옵션 (checkbox/radio) 컨테이너 */
+.filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  flex: 1;
+}
+
+/* 라벨 공통 */
+.filter-options label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #7a3c00; /* 좀 더 차분한 브라운 */
+  cursor: pointer;
+  gap: 6px;
+  user-select: none;
+}
+
+/* 체크박스/라디오 버튼 */
+.filter-options input[type="checkbox"],
+.filter-options input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #ff6f3c; /* 밝은 오렌지 */
+  cursor: pointer;
+}
+
+/* 버튼 영역 */
+.filter-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+/* 공통 버튼 스타일 */
+.filter-buttons button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* 초기화 버튼 */
+.filter-buttons button:first-child {
+  background-color: #fff1e0; /* 연한 크림 */
+  color: #7a3c00;
+}
+
+.filter-buttons button:first-child:hover {
+  background-color: #ffd8b3; /* 밝은 오렌지 톤 */
+}
+
+/* 적용 버튼 */
+.filter-buttons button:last-child {
+  background-color: #b24a00; /* 진한 오렌지/브라운 */
+  color: white;
+  box-shadow: 0 4px 10px rgba(178, 74, 0, 0.3);
+}
+
+.filter-buttons button:last-child:hover {
+  background-color: #8a3600; /* 더 진한 브라운 */
+}
+
+/* 공통 토글 버튼 스타일 */
+.toggle-button {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1.5px solid #d1a56b; /* 부드러운 브라운 계열 */
+  border-radius: 30px;
+  background-color: #fff4e6; /* 연한 크림 */
+  color: #7a3c00;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+
+.toggle-button:hover {
+  background-color: #ffd8b3; /* 밝은 오렌지 */
+}
+
+/* 선택된 상태 */
+.toggle-button.active {
+  background-color: #b24a00;
+  color: #fff;
+  border-color: #b24a00;
+  box-shadow: 0 3px 8px rgba(178, 74, 0, 0.25);
+}
+
+/* 숨겨진 input (기본 체크박스/라디오 숨김) */
+.toggle-button input {
+  display: none;
+}
+
+/* 다크모드 스타일 */
+.filter-section.dark-mode {
+  background-color: #2a2a2a; /* 어두운 배경 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  color: #eee;
+}
+
+.filter-section.dark-mode .filter-row h3 {
+  color: #fff; /* 제목 흰색 */
+}
+
+.filter-section.dark-mode .filter-options label {
+  color: #ccc; /* 옵션 텍스트 연한 회색 */
+  border-color: transparent;
+}
+
+.filter-section.dark-mode .toggle-button {
+  background-color: #3a3a3a; /* 다크 배경 */
+  color: #ccc;
+  border: 1.5px solid #555;
+}
+
+.filter-section.dark-mode .toggle-button:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+.filter-section.dark-mode .toggle-button.active {
+  background-color: #ff8c42; /* 활성 상태 오렌지 */
+  color: #fff;
+  border-color: #ff8c42;
+  box-shadow: 0 3px 8px rgba(255, 140, 66, 0.4);
+}
+
+.filter-section.dark-mode .filter-buttons button:first-child {
+  background-color: #555; /* 초기화 버튼 다크 */
+  color: #fff;
+}
+
+.filter-section.dark-mode .filter-buttons button:first-child:hover {
+  background-color: #777;
+}
+
+.filter-section.dark-mode .filter-buttons button:last-child {
+  background-color: #ff8c42; /* 적용 버튼 다크 */
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(255, 140, 66, 0.4);
+}
+
+.filter-section.dark-mode .filter-buttons button:last-child:hover {
+  background-color: #e67a2e;
+}
+
+.filter-section.dark-mode .filter-options input[type="checkbox"],
+.filter-section.dark-mode .filter-options input[type="radio"] {
+  accent-color: #ff8c42; /* 체크박스/라디오 다크 색상 */
+}

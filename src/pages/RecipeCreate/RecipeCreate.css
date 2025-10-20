@@ -1,0 +1,384 @@
+/* 🧱 레이아웃 */
+.create-body-frame {
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  margin-bottom: 0px;
+  padding: 24px;
+  background: #fff8f0;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Pretendard Variable", "Inter", sans-serif;
+}
+
+/* 🧾 폼 */
+.create-form {
+  background-color: white;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 700px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(178, 74, 0, 0.15);
+  padding: 20px;
+}
+
+/* 🏷️ 제목 */
+.create-form-title {
+  font-size: 28px;
+  font-weight: 1000;
+  color: #421f01;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* 📌 라벨 */
+.create-label {
+  font-weight: 600;
+  color: #421f01;
+  margin-bottom: 6px;
+  display: block;
+  font-size: 15px;
+}
+
+/* ✏️ 입력창 / 텍스트영역 */
+.create-form input[type="text"],
+.create-form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1.5px solid #421f01;
+  border-radius: 10px;
+  transition: border-color 0.25s ease;
+  font-family: "Pretendard Variable", "Inter", sans-serif;
+}
+
+.create-form input[type="text"]:focus,
+.create-form textarea:focus {
+  outline: none;
+  border-color: #ce7e38;
+  box-shadow: 0 0 8px #ce7e3873;
+}
+
+/* 🍱 카테고리 / 날씨 박스 */
+.create-category-box,
+.create-weather-box {
+  border: 1.5px solid #421f01;
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.create-category-box label,
+.create-weather-box label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #421f01;
+  cursor: pointer;
+}
+
+.create-category-box input,
+.create-weather-box input {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+/* 🧂 재료 입력 */
+.create-ingredients-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+  margin-bottom: 20px;
+}
+
+.create-ingredient-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f7f9fa;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #421f01;
+}
+
+.create-ingredient-item span {
+  min-width: 60px;
+}
+
+/* ➕ 재료 추가줄 */
+.create-add-ingredient-box {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.create-input-box.small {
+  flex: 1;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1.5px solid #421f01;
+}
+
+.create-input-box.small:focus {
+  border-color: #ce7e38;
+  box-shadow: 0 0 8px #ce7e385e;
+  outline: none;
+}
+
+/* 🔘 버튼 기본 */
+.create-btn {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+/* 🔹 작은 버튼 */
+.create-btn.small {
+  background-color: #3498db;
+  color: white;
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  padding: 0;
+  font-size: 18px;
+  user-select: none;
+}
+
+.create-btn.small:hover {
+  background-color: #2980b9;
+}
+
+/* ❌ 삭제 버튼 */
+.create-btn.delete {
+  background-color: #e74c3c;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 24px;
+  box-shadow: 0 3px 6px rgba(231, 76, 60, 0.5);
+  font-size: 13px;
+}
+
+.create-btn.delete:hover {
+  background-color: #c0392b;
+}
+
+/* ✅ 추가 버튼 */
+.create-btn.add {
+  background-color: #43cea2;
+  color: white;
+  border-radius: 24px;
+  padding: 8px 18px;
+  font-weight: 700;
+  box-shadow: 0 3px 6px rgba(67, 206, 162, 0.5);
+}
+
+.create-btn.add:hover {
+  background-color: #2ea67a;
+}
+
+/* 🍳 폼 제출 버튼 */
+.create-add-btn {
+  display: block;
+  margin: 20px auto;
+  width: 250px;
+  padding: 12px 0;
+  background-color: #421f01;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.create-add-btn:hover {
+  background-color: #60310f;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px #180c04;
+}
+
+/* 🖼️ 이미지 업로드 (Create 전용) */
+.create-image-upload-box {
+  border: 2px dashed #bbb;
+  border-radius: 10px;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #fafafa;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+/* 업로드 전 텍스트 */
+.create-image-upload-box::before {
+  content: "이미지를 수정하세요";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #421f01;
+  font-weight: 600;
+  font-size: 17px;
+  text-align: center;
+}
+
+.create-image-preview {
+  width: 350px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.create-image-overlay {
+  background: transparent !important;
+  color: #421f01 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* 25/10/17 15:56 한해찬 수정 */
+/* 다크모드 적용 */
+
+/* 🌙 다크 모드 */
+.dark .create-body-frame {
+  background: #1e1e1e;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.dark .create-form {
+  background-color: #2a2a2a;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 🔹 제목 */
+.dark h2.create-form-title,
+.dark .create-form-title {
+  color: #ddd;
+}
+
+/* 🔹 라벨 */
+.dark label.create-label,
+.dark .create-label {
+  color: #ddd;
+}
+
+.dark .create-form input[type="text"],
+.dark .create-form textarea,
+.dark .create-input-box.small {
+  background-color: #1e1e1e;
+  color: #eee;
+  border-color: #666;
+}
+
+.dark .create-form input[type="text"]:focus,
+.dark .create-form textarea:focus,
+.dark .create-input-box.small:focus {
+  border-color: #eee;
+  box-shadow: 0 0 8px #eee;
+}
+
+.dark .create-category-box,
+.dark .create-weather-box {
+  border-color: #666;
+  background-color: #2e2e2e;
+}
+
+.dark .create-category-box label,
+.dark .create-weather-box label {
+  color: #ddd;
+}
+
+.dark .create-ingredient-item {
+  background: #333;
+  color: #f0f0f0;
+}
+
+.dark .create-btn.delete {
+  background-color: #b3392d;
+}
+
+.dark .create-btn.add {
+  background-color: #357a66;
+}
+
+.dark .create-add-btn {
+  background-color: #ff9e73;
+  color: #1e1e1e;
+  box-shadow: 0 4px 8px rgba(255, 158, 115, 0.4);
+}
+
+.dark .create-add-btn:hover {
+  background-color: #ffb48d;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 158, 115, 0.5);
+}
+
+.dark .create-image-upload-box {
+  background-color: #2e2e2e;
+  border-color: #666;
+}
+
+.dark .create-image-upload-box::before {
+  color: #ccc;
+}
+
+.dark .create-image-overlay {
+  color: #ccc !important;
+}
+
+/* 🟤 RecipeDetail 재료 추가 버튼 다크모드 */
+.dark button.btn.add {
+  background-color: #444444; /* 기존 밝은 녹색 → 다크모드에 맞게 어둡게 */
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+.dark button.btn.add:hover {
+  background-color: #444444;
+  color: #fff;
+}
+
+/* 🟤 Create 폼 제출 버튼 다크모드 */
+.dark button.create-add-btn {
+  background-color: #444444; /* 기존 밝은 오렌지 → 다크모드 대비 */
+  color: #fff;
+  box-shadow: 0 4px 8px #444444;
+}
+
+.dark button.create-add-btn:hover {
+  background-color: #444444;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px #444444;
+}

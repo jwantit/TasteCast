@@ -1,0 +1,48 @@
+/* Home.css */
+
+/* 레시피 카드 */
+.recipe-card {
+  display: flex;
+  flex: 0 0 45%; /* 가로 2개씩 배치 */
+  flex-direction: column;
+  align-items: flex-start;
+  background: #fff8f0; /* 크림톤 배경으로 부드럽게 */
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 3px 6px rgba(178, 74, 0, 0.1); /* .nav-link 그림자 색과 통일 */
+  transition: box-shadow 0.3s ease;
+}
+
+.recipe-card:hover {
+  box-shadow: 0 6px 12px rgba(178, 74, 0, 0.3);
+}
+
+/* 레시피 이미지 */
+.recipe-card img {
+  width: 100%;
+  border-radius: 12px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(178, 74, 0, 0.1);
+}
+
+/* 레시피 텍스트 */
+.recipe-text {
+  white-space: pre-line;
+  font-size: 14px;
+  color: #5f2902; /* .nav-link 텍스트 색상과 맞춤 */
+  font-weight: 500;
+  font-family: "Pretendard Variable", "Inter", sans-serif;
+  line-height: 1.4;
+}
+
+/* 다크 모드 스타일 */
+.home.dark .recipe-card {
+  background: #2c2c2c;
+  color: #f0f0f0;
+}
+
+.home.dark .recipe-text {
+  color: #f0f0f0;
+}

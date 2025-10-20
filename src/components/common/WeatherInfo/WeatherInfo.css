@@ -1,0 +1,64 @@
+.weather-panel {
+  background: #fffefc;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(66, 31, 1, 0.1);
+  padding: 24px;
+  text-align: center;
+  margin: 20px auto 20px;
+  width: 80%;
+  max-width: 700px;
+}
+
+.weather-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #5a2e05;
+  margin-bottom: 12px;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.weather-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.weather-desc {
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+
+.weather-recommend {
+  margin-top: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #ce7e38;
+  font-family: "Pretendard Variable", "Inter", sans-serif;
+}
+
+/* ---------------------------
+   다크모드 스타일
+---------------------------- */
+.dark .weather-panel {
+  background: #2c2c2c; /* 다크 배경 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark .weather-title {
+  color: #ffd8a6; /* 연한 오렌지톤 텍스트 */
+}
+
+.dark .weather-desc {
+  color: #fff; /* 흰색 텍스트 */
+}
+
+.dark .weather-recommend {
+  color: #ffb87c; /* 다크모드용 추천 텍스트 */
+}

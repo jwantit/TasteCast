@@ -1,0 +1,507 @@
+.body-frame {
+  margin: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #fff8f0;
+}
+.recipe-Detail-form {
+  background-color: white;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 700px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(178, 74, 0, 0.15);
+  padding: 20px;
+}
+.form-title {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+}
+label {
+  font-weight: bold;
+  margin-top: 8px;
+  color: #444;
+}
+.recipe-Detail-form input[type="text"],
+.recipe-Detail-form textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+textarea {
+  resize: none;
+}
+.image-box {
+  width: 100%;
+  height: 0px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 14px;
+  background-color: #fafafa;
+}
+.ingredients-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+  margin-bottom: 20px;
+}
+/* 각 재료 박스 (1개 - + 삭제) */
+.ingredient-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #ccc;
+  padding: 0 10px;
+  border-radius: 6px;
+  background: #fff;
+  height: 40px; /* 고정 높이 */
+  box-sizing: border-box;
+  line-height: 40px; /* 텍스트 중앙정렬 효과 */
+}
+/* 재료 버튼 그룹 */
+.ingredient-buttons {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+.btn {
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+/* 작은 버튼 (재료 개수 조절) */
+.btn.small {
+  background-color: #3498db;
+  color: white;
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  padding: 0;
+  font-size: 18px;
+  user-select: none;
+}
+.btn.small:hover {
+  background-color: #2980b9;
+}
+/* 삭제 버튼 */
+.btn.delete {
+  background-color: #e74c3c;
+  color: white;
+  padding: 0 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  box-shadow: 0 2px 6px rgba(231, 76, 60, 0.5);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  height: 30px;
+  line-height: 30px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn.delete:hover {
+  background-color: #c0392b;
+}
+/* 새 재료 입력 + 추가 버튼 줄 */
+.add-ingredient-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px; /* 재료 박스와 동일한 높이 */
+}
+/* 새 재료 입력 칸 */
+.input-box.small {
+  flex: 1;
+  min-width: 200px;
+  height: 100%; /* 부모 높이에 맞춤 */
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+/* + 재료 추가 버튼 */
+.btn.add {
+  background-color: #2ecc71;
+  color: white;
+  border: 1px solid #27ae60;
+  border-radius: 6px;
+  padding: 0 15px;
+  font-weight: bold;
+  cursor: pointer;
+  height: 100%; /* 동일 높이 유지 */
+  box-sizing: border-box;
+}
+.btn.add:hover {
+  background-color: #27ae60;
+}
+.btn-box {
+  display: flex;
+  justify-content: space-between; /* 좌우 끝으로 배치 */
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  padding: 0 20px; /* 버튼이 너무 끝에 닿지 않도록 살짝 여백 */
+  box-sizing: border-box;
+}
+.add-btn-le,
+.add-btn-ri {
+  flex: 1; /* 각각 버튼이 좌우 끝까지 넓게 확장됨 */
+  max-width: 45%; /* 버튼이 겹치지 않도록 폭 제한 */
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+  user-select: none;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+} /* 왼쪽 버튼 */
+.add-btn-le {
+  background-color: #d9534f;
+  margin-right: 10px;
+}
+.add-btn-le:hover {
+  background-color: #c9302c;
+  box-shadow: 0 8px 16px #330c0b;
+} /* 오른쪽 버튼 */
+.add-btn-ri {
+  background-color: #5cb85c;
+  margin-left: 10px;
+}
+.add-btn-ri:hover {
+  background-color: #4cae4c;
+  box-shadow: 0 8px 16px #1b3b1b;
+} /* 상세 이미지 박스 */
+.detail-image-box {
+  width: 350px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #fafafa;
+}
+.detail-preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.showpics {
+  border: 2px dashed #bbb;
+  border-radius: 10px;
+  width: 100%; /*이미지보다 약간 넓게 */
+  height: 250px;
+  display: flex;
+  justify-content: center;
+
+  background-color: #fafafa;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+/* 카테고리 및 날씨 display 박스 */
+.category-display-box {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #fcfcfc;
+  font-size: 15px;
+  color: #444;
+  min-height: 38px;
+  line-height: 38px;
+}
+.recipe-category-box {
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+} /* 각 옵션 레이블 */
+.recipe-category-box label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+  border: 1.5px solid transparent;
+  font-weight: 500;
+  color: #555;
+}
+/* 숨긴 기본 라디오 버튼 */
+.recipe-category-box input[type="radio"] {
+  display: none;
+}
+/* 커스텀 원형 라디오 디자인 */
+.recipe-category-box input[type="radio"] + span,
+.recipe-category-box label > span {
+  position: relative;
+  padding-left: 28px;
+  font-size: 15px;
+  color: #444;
+}
+.recipe-category-box input[type="radio"] + span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border: 2px solid #bbb;
+  border-radius: 50%;
+  background-color: white;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+.recipe-category-box input[type="radio"]:checked + span::before {
+  border-color: #ce7e38;
+  background-color: #ce7e38;
+}
+.recipe-category-box input[type="radio"]:checked + span::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+}
+/* 라벨 호버 효과 */
+.recipe-category-box label:hover {
+  background-color: #f0ebe8;
+  border-color: #ce7e38;
+  color: #ce7e38;
+}
+/* 선택된 옵션 텍스트 컬러와 배경 */
+.recipe-category-box input[type="radio"]:checked + span {
+  color: #333;
+  font-weight: 600;
+}
+
+/* 25/10/17 16:04 한해찬 수정 */
+/* 다크 모드 적용  */
+/* 🌙 RecipeDetail 다크모드 CSS */
+
+/* 전체 배경/기본 텍스트 */
+.dark .body-frame {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+/* 상세 폼 배경, 그림자 */
+.dark .recipe-Detail-form {
+  background-color: #222;
+  color: #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* 제목 */
+.dark .form-title {
+  color: #f0f0f0;
+}
+
+/* label 색상 */
+.dark label {
+  color: #ddd;
+}
+
+/* input / textarea */
+.dark .recipe-Detail-form input,
+.dark .recipe-Detail-form textarea {
+  background-color: #333;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+.dark .recipe-Detail-form input:disabled,
+.dark .recipe-Detail-form textarea:disabled {
+  background-color: #2b2b2b;
+  color: #aaa;
+}
+
+/* 재료 박스 */
+.dark .ingredient-item {
+  background-color: #3a3a3a;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+.dark .ingredient-item input,
+.dark .ingredient-item textarea {
+  background-color: #3a3a3a;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+/* 재료 버튼 */
+.dark .ingredient-item button {
+  background-color: #555;
+  color: #f0f0f0;
+  border: none;
+}
+
+.dark .ingredient-item button:hover {
+  background-color: #777;
+}
+
+/* recipe-category-box (카테고리/날씨 옵션) */
+.dark .recipe-category-box {
+  background-color: #2a2a2a;
+  border: 1px solid #555;
+  color: #ffffff; /* 기본 글자 밝게 */
+}
+
+.dark .recipe-category-box label {
+  color: #f0f0f0; /* 라벨 텍스트 밝게 */
+  border-color: transparent;
+}
+
+.dark .recipe-category-box label:hover {
+  background-color: #999; /* 호버 시 어둡게 */
+  color: #ffffff; /* 밝은 강조 색상 */
+  border-color: #999;
+}
+
+.dark .recipe-category-box input[type="radio"] + span::before {
+  border-color: #777;
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+.dark .recipe-category-box input[type="radio"]:checked + span::before {
+  border-color: #555;
+  background-color: #444;
+}
+
+.dark .recipe-category-box input[type="radio"]:checked + span {
+  color: #ffffff; /* 선택된 옵션 글자 밝게 */
+}
+
+/* category-display-box */
+.dark .category-display-box {
+  background-color: #1f1f1f;
+  color: #ffffff;
+  border: 1px solid #333;
+}
+
+/* 이미지 박스 */
+.dark .image-upload-box-1,
+.dark .showpics {
+  background-color: #2b2b2b;
+  border: 1px solid #555;
+  color: #f0f0f0;
+}
+
+.dark .detail-image-box {
+  background-color: #1a1a1a;
+}
+
+.dark .detail-preview-image {
+  filter: brightness(0.9);
+}
+
+.dark .detail-preview-image.blurred {
+  filter: brightness(0.5) blur(4px);
+}
+
+/* 버튼 */
+.dark .add-btn-le,
+.dark .add-btn-ri {
+  background-color: #444;
+  color: #f0f0f0;
+  border: 1px solid #555;
+}
+
+.dark .add-btn-le:hover,
+.dark .add-btn-ri:hover {
+  background-color: #666;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* 삭제 버튼 */
+.dark .btn.delete {
+  background-color: #aa3333;
+  color: #fff;
+}
+
+.dark .btn.delete:hover {
+  background-color: #cc5555;
+}
+
+/* 재료 추가 버튼 */
+.dark .btn.add {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.dark .btn.add:hover {
+  background-color: #555;
+}
+
+/* 이미지 업로드 로딩 텍스트 */
+.dark .image-upload-box p,
+.dark .no-image-text {
+  color: #ccc;
+}
+
+/* 🌙 다크모드 - 카테고리/날씨 옵션 텍스트 */
+.dark .recipe-category-box input[type="radio"] + span,
+.dark .recipe-category-box label > span {
+  position: relative;
+  padding-left: 28px;
+  font-size: 15px;
+  color: #f0f0f0; /* 글자 밝게 */
+}
+
+/* 라디오 버튼 테두리/배경 */
+.dark .recipe-category-box input[type="radio"] + span::before {
+  border-color: #777;
+  background-color: #1e1e1e; /* 다크 배경 */
+}
+
+/* 체크된 라디오 버튼 */
+.dark .recipe-category-box input[type="radio"]:checked + span::before {
+  border-color: #444;
+  background-color: #444;
+}
+
+.dark .recipe-category-box input[type="radio"]:checked + span::after {
+  background-color: #fff; /* 체크 내부 점 밝게 */
+}
+
+/* 호버 시 */
+.dark .recipe-category-box label:hover {
+  background-color: #444;
+  color: #444; /* 강조 색상 */
+  border-color: #444;
+}

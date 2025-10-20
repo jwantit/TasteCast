@@ -1,0 +1,101 @@
+.header {
+  /* background: linear-gradient(90deg, #ff6f3c 0%, #ff4500 100%); */
+  background: linear-gradient(90deg, #ff9e73 0%, #ff7043 100%);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(255, 111, 60, 0.3);
+  font-family: "Pretendard Variable", "Inter", sans-serif;
+  font-weight: 1000;
+}
+
+.title {
+  color: #fff8f0;
+  font-weight: 1000;
+  font-size: 26px;
+  margin-bottom: 16px;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.meal-icon {
+  font-size: 32px; /* 아이콘 크기 조정 */
+  color: white; /* 아이콘 색상 */
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg, #fff1e0 0%, #ffd8b3 100%);
+  color: #b24a00;
+  border: none;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 30px;
+  box-shadow: 0 3px 6px rgba(178, 74, 0, 0.1);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.nav-link:hover {
+  background: linear-gradient(90deg, #b24a00 0%, #ff7b3c 100%);
+  color: #fff8f0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(178, 74, 0, 0.4);
+}
+
+/* 최상위 레이아웃에 .dark 클래스가 붙었을 때 적용 */
+.dark .header {
+  background: #1a1a1a; /* 어두운 배경 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.dark .title,
+.dark .meal-icon {
+  color: #f0f0f0; /* 라이트 텍스트 */
+}
+
+.dark .nav-link {
+  background: #333; /* 다크 배경 버튼 */
+  color: #eee; /* 버튼 텍스트 */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.dark .nav-link:hover {
+  background: #555; /* 호버 시 밝은 다크톤 */
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* 다크 모드 토글 버튼 */
+.dark-mode-toggle {
+  margin-bottom: 12px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: #ff9e73; /* 라이트 버튼 유지 */
+  color: #fff8f0;
+  transition: all 0.25s ease;
+}
+
+.dark .dark-mode-toggle {
+  background: #555;
+  color: #f0f0f0;
+}
+
+.dark .dark-mode-toggle:hover {
+  background: #777;
+}

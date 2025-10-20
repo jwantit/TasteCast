@@ -1,0 +1,116 @@
+.image-upload-box {
+  border: 2px dashed #bbb;
+  border-radius: 10px;
+  width: 100%; /* 이미지보다 약간 넓게 */
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #fafafa;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+.image-upload-box-1 {
+  border-radius: 10px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.image-box:hover {
+  border-color: #888;
+  background-color: #f0f0f0;
+}
+
+/* ✅ 업로드된 이미지 */
+.preview-image {
+  width: 350px;
+  height: 230px;
+  object-fit: cover; /* 비율 유지하면서 잘라냄 */
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 완벽한 가운데 정렬 */
+}
+.detail-image-box {
+  position: relative;
+  width: 350px;
+  height: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #ffffff; /* 여기 추가 */
+}
+
+.detail-preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+/* 🔹 수정모드일 때 이미지 살짝 어둡게 */
+.blurred {
+  filter: brightness(0.5);
+}
+
+/* 🔹 오버레이 (반투명 검정 + 중앙 텍스트) */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* 클릭 막지 않음 */
+}
+
+/* 🌙 다크모드 전용 스타일 */
+.dark .image-upload-box {
+  background-color: #222; /* 어두운 배경 */
+  border: 2px dashed #555; /* 연한 회색 테두리 */
+}
+
+.dark .image-upload-box-1 {
+  background-color: #1e1e1e; /* 어두운 배경 */
+}
+
+.dark .detail-image-box {
+  background-color: #1a1a1a;
+}
+
+.dark .detail-preview-image {
+  filter: brightness(0.9);
+}
+
+.dark .detail-preview-image.blurred {
+  filter: brightness(0.5) blur(4px);
+}
+
+/* ✅ 오버레이 텍스트도 어두운 배경에 어울리게 조정 */
+.dark .image-overlay {
+  background: rgba(50, 50, 50, 0.6);
+  color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* ✅ hover 시 효과 */
+.dark .image-upload-box:hover {
+  border-color: #888;
+  background-color: #2a2a2a;
+}

@@ -1,0 +1,142 @@
+/* 레시피 정보 컨테이너 */
+.recipe-container {
+  display: flex;
+  flex-wrap: wrap; /* 가로 배치 후 줄 바꿈 */
+  justify-content: center; /* 가로 가운데 정렬 */
+  align-items: flex-start;
+  gap: 20px; /* 카드 간 간격 */
+  width: 80%;
+  margin: 0 auto; /* 화면 가운데 정렬 */
+  padding: 10px;
+}
+
+/* 각 레시피 카드 */
+.recipe-card {
+  position: relative; /* 버튼 절대 위치 기준 */
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px; /* 둥근 모서리 */
+  box-shadow: 0 4px 12px rgba(178, 74, 0, 0.15); /* 따뜻한 오렌지 톤 그림자 */
+  padding: 16px;
+  width: 320px;
+  height: 330px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  background: #f8f6f5; /* 크림톤 배경 */
+}
+
+.recipe-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background: #fff8f0; /* 연한 회색 배경 */
+}
+
+/* 좋아요 위치 */
+.recipe-likes {
+  position: absolute; /* 카드 기준 절대 위치 */
+  bottom: 16px;
+  right: 16px;
+}
+
+/* 좋아요 버튼 */
+.recipe-likes button {
+  background-color: rgba(178, 74, 0, 0.15);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #b24a00;
+  transition: all 0.25s ease;
+}
+
+.recipe-likes button:hover {
+  background-color: rgba(178, 74, 0, 0.3);
+  color: #fff8f0;
+}
+
+/* 레시피 이미지 */
+.recipe-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(178, 74, 0, 0.2);
+}
+
+/* 레시피 텍스트 */
+.recipe-text h2 {
+  font-size: 1.3rem;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #2c1301; /* 오렌지 톤 제목 */
+}
+
+.recipe-text p {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+  color: #6b3e00; /* 진한 브라운 느낌 텍스트 */
+}
+
+/* 삭제 버튼 */
+.deleteButton {
+  background-color: #ff4d4f;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(255, 111, 60, 0.3);
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff8f0;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.deleteButton:hover {
+  background-color: #d9363e;
+  transform: translateY(-2px);
+}
+/* ---------------------------
+   다크모드 스타일 추가
+---------------------------- */
+.dark .recipe-container {
+  background-color: #1e1e1e; /* 전체 컨테이너 다크 배경 */
+}
+
+.dark .recipe-card {
+  background: #2c2c2c; /* 카드 배경 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.dark .recipe-card:hover {
+  background: #3a3a3a;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+}
+
+.dark .recipe-text h2 {
+  color: #f5f5f5; /* 제목 밝게 */
+}
+
+.dark .recipe-text p {
+  color: #cccccc; /* 텍스트 밝게 */
+}
+
+.dark .recipe-likes button {
+  background-color: rgba(255, 160, 100, 0.15); /* 버튼 배경 */
+  color: #ffb87c; /* 버튼 글자 색 */
+}
+
+.dark .recipe-likes button:hover {
+  background-color: rgba(255, 160, 100, 0.3);
+  color: #fff;
+}
+
+.dark .deleteButton {
+  background-color: #ff6b6b;
+  color: #fff;
+}
+
+.dark .deleteButton:hover {
+  background-color: #e04e4e;
+}
